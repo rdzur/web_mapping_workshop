@@ -121,7 +121,7 @@ function getDirections(frm, to){
         }
      })
      
-     $('#directions').fadein(400, function(){
+     $('#directions').fadeIn(400, function(){
         var summary = data.trip.summary
         $('#summary').empty();
         $('#distance').txt(Math.round(summary.length * 100) / 100) + data.trip.unitys; 
