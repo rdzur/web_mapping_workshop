@@ -40,7 +40,7 @@ featureLayer.on('ready', function(){
 //    })
 //})
 
-var clickHanlder = function(e){
+var clickHandler = function(e){
     $('#info').empty();
   
   var feature = e.target.feature;
