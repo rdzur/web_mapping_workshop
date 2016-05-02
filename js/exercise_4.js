@@ -34,8 +34,31 @@ featureLayer.on('ready', function(){
     map.fitBounds(featureLayer.getBounds());
 })
 
+//featureLayer.on('ready', function(){
+//    this.eachLayer(function(layer){
+//       layer.bindPopup('Welcom to ' + layer.feature.properties.name);
+//    })
+//})
+
+var clickHanlder = function(e){
+    $('#info').empty();
+  
+  var feature = e.target.feature;
+  $('#sidbar').fadeIn(400, function(){
+    var info = '';
+    info += '<duv>';
+    info += '<h2>' + feature.properties.name + '</h2>'
+    if(feature.properties.cuising) info += '<p>' + feature.properties.cuisine + '</p>';
+    if(feature.properties.phone) info += '<p>' + features.properties.phone + '</p>';
+    if(feature.properties.website) info += '<p><a href="' + features.properties.website + '">' + feature.properties.website + '</a></p>';
+    info += '</div>';
+    $('#info').append(info);
+  })
+  
+}
+
 featureLayer.on('ready', function(){
-    this.eachLayer(function(layer){
-       layer.bindPopup('Welcom to ' + layer.feature.properties.name);
-    })
+  this.eachLayer(function(layer){
+    layer.on('click', clickHandler);
+  })
 })
