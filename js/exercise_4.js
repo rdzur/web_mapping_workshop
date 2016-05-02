@@ -46,7 +46,7 @@ var clickHandler = function(e){
   var feature = e.target.feature;
   $('#sidbar').fadeIn(400, function(){
     var info = '';
-    info += '<duv>';
+    info += '<div>';
     info += '<h2>' + feature.properties.name + '</h2>'
     if(feature.properties.cuising) info += '<p>' + feature.properties.cuisine + '</p>';
     if(feature.properties.phone) info += '<p>' + features.properties.phone + '</p>';
