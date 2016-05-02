@@ -120,6 +120,14 @@ function getDirections(frm, to){
             "stroke-width": 8
         }
      })
+     
+     $('#directions').fadein(400, function(){
+        var summary = data.trip.summary
+        $('#summary').empty();
+        $('#distance').txt(Math.round(summary.length * 100) / 100) + data.trip.unitys; 
+        $('#time').text((Math.round(summary.time / 60 *100) / 100) + 'min');
+     })
+     
    })
 }
 
